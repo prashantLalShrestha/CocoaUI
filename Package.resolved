@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DeviceX",
+        "repositoryURL": "https://github.com/prashantLalShrestha/DeviceX.git",
+        "state": {
+          "branch": null,
+          "revision": "e55c813e770401f071cffbe4d869aba522f4f7d0",
+          "version": "1.2.0"
+        }
+      },
+      {
+        "package": "LocalizeX",
+        "repositoryURL": "https://github.com/prashantLalShrestha/LocalizeX.git",
+        "state": {
+          "branch": null,
+          "revision": "a5c3bff52bbeb0c790d11c5baa7327b967149b5e",
+          "version": "1.2.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

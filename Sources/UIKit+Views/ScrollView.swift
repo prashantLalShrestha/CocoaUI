@@ -1,0 +1,13 @@
+//
+//  ScrollView.swift
+//  CocoaUI
+//
+//  Created by Prashant Shrestha on 5/18/20.
+//  Copyright © 2020 Inficare. All rights reserved.
+//
+
+import UIKit
+
+public class ScrollView: UIScrollView {
+    
+}
