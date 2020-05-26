@@ -11,9 +11,6 @@ import LocalizeX
 
 open class ViewController: UIViewController, ThemeConfigurable, Localizable {
     
-    static var closeBarButtonIcon: UIImage?
-    static var backBarButtonIcon: UIImage?
-    
     public var automaticallyAdjustsLeftBarButtonItem = true
     
     public var navigationTitle = "" {
@@ -93,7 +90,7 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
     public var closeBarButtonIcon: UIImage?
     public var backBarButtonIcon: UIImage?
     private lazy var closeBarButton: BarButtonItem = {
-        let view = BarButtonItem(image: ViewController.closeBarButtonIcon?.withRenderingMode(.alwaysTemplate),
+        let view = BarButtonItem(image: UIImage.closeImage().scaled(to: CGSize(width: 32, height: 32))?.withRenderingMode(.alwaysTemplate),
                                  style: .plain,
                                  target: self,
                                  action: #selector(closeAction))
@@ -206,14 +203,14 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
     // MARK: Adjusting Navigation Item
     func adjustLeftBarButtonItem() {
         if self.navigationController?.viewControllers.count ?? 0 > 1 { // Pushed
-            closeBarButtonIcon = backBarButtonIcon ?? ViewController.backBarButtonIcon
+            closeBarButtonIcon = backBarButtonIcon ?? UIImage.backArrowImage().scaled(to: CGSize(width: 32, height: 32))?.withRenderingMode(.alwaysTemplate)
             if closeBarAction == nil {
                 closeBarAction = { [weak self] () in
                     self?.navigationController?.popViewController(animated: true)
                 }
             }
         } else  { // presented
-            closeBarButtonIcon = closeBarButtonIcon ?? ViewController.closeBarButtonIcon
+            closeBarButtonIcon = closeBarButtonIcon ?? UIImage.closeImage().scaled(to: CGSize(width: 32, height: 32))?.withRenderingMode(.alwaysTemplate)
             if closeBarAction == nil {
                 closeBarAction = { [weak self] () in
                     self?.navigationController?.dismiss(animated: true, completion: nil)

@@ -58,6 +58,7 @@
 		8F86DB5F2474F0A500BE8F10 /* NotificationName+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F86DB5A2474F0A500BE8F10 /* NotificationName+Theme.swift */; };
 		8F86DB602474F0A500BE8F10 /* UIColor+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F86DB5B2474F0A500BE8F10 /* UIColor+Extra.swift */; };
 		8F86DB622474F2FF00BE8F10 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F86DB612474F2FF00BE8F10 /* Button.swift */; };
+		8FDA6A8F247D57B9000E765C /* UIImage+Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA6A8E247D57B9000E765C /* UIImage+Shapes.swift */; };
 		CC941BC56514A721444E9A6C /* Pods_CocoaUI_CocoaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FAC1580C315E7141ED8B3B /* Pods_CocoaUI_CocoaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,7 @@
 		8F86DB5A2474F0A500BE8F10 /* NotificationName+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationName+Theme.swift"; sourceTree = "<group>"; };
 		8F86DB5B2474F0A500BE8F10 /* UIColor+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extra.swift"; sourceTree = "<group>"; };
 		8F86DB612474F2FF00BE8F10 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		8FDA6A8E247D57B9000E765C /* UIImage+Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Shapes.swift"; sourceTree = "<group>"; };
 		D2FAC1580C315E7141ED8B3B /* Pods_CocoaUI_CocoaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaUI_CocoaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9AA624B6C9C17DBDDD6F8E /* Pods-CocoaUI-CocoaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaUI-CocoaUITests.release.xcconfig"; path = "../../CoreKits/DevelopmentPods/CocoaUI/Pods/Target Support Files/Pods-CocoaUI-CocoaUITests/Pods-CocoaUI-CocoaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				8F14D3002472D8870017DF70 /* UIBezierPath+Shapes.swift */,
+				8FDA6A8E247D57B9000E765C /* UIImage+Shapes.swift */,
 			);
 			path = "UIBezierPath+Shapes";
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				8F14D3232472E86A0017DF70 /* SwiftWebVC.swift in Sources */,
 				8F86DB5D2474F0A500BE8F10 /* ThemeConfigurable.swift in Sources */,
 				8F14D3292472E96B0017DF70 /* SplitViewController.swift in Sources */,
+				8FDA6A8F247D57B9000E765C /* UIImage+Shapes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
