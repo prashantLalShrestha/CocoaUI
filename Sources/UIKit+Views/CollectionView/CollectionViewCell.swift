@@ -33,6 +33,12 @@ open class CollectionViewCell: UICollectionViewCell, ThemeConfigurable {
         super.init(coder: aDecoder)
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: .themeToggled, object: nil)
+    }
+    
     open func makeUI() {
         self.layer.masksToBounds = true
         updateUI()

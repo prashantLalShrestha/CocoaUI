@@ -58,6 +58,12 @@ open class TableViewCell: UITableViewCell, ThemeConfigurable, Localizable {
         self.registerForLocalizeEvent()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: .themeToggled, object: nil)
+    }
+    
     
     open override func awakeFromNib() {
         super.awakeFromNib()

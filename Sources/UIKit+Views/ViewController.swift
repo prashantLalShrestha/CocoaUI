@@ -55,7 +55,7 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
         return view
     }()
     
-    private lazy var scrollView: ScrollView = {
+    public lazy var scrollView: ScrollView = {
         let view = ScrollView()
         view.contentInsetAdjustmentBehavior = .never
         view.showsVerticalScrollIndicator = false
@@ -68,7 +68,7 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
         return view
     }()
     
-    private lazy var scrollContentView: View = {
+    public lazy var scrollContentView: View = {
         let view = View()
         scrollView.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -151,6 +151,13 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
     }
     
     deinit {
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: .themeToggled, object: nil)
+        
     }
     
     override open func didReceiveMemoryWarning() {
