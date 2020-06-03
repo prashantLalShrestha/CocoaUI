@@ -210,14 +210,14 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
     // MARK: Adjusting Navigation Item
     func adjustLeftBarButtonItem() {
         if self.navigationController?.viewControllers.count ?? 0 > 1 { // Pushed
-            closeBarButtonIcon = backBarButtonIcon ?? UIImage.backArrowImage().scaled(to: CGSize(width: 16, height: 16))?.withRenderingMode(.alwaysTemplate)
+            closeBarButton.image = backBarButtonIcon ?? UIImage.backArrowImage().scaled(to: CGSize(width: 16, height: 16))?.withRenderingMode(.alwaysTemplate)
             if closeBarAction == nil {
                 closeBarAction = { [weak self] () in
                     self?.navigationController?.popViewController(animated: true)
                 }
             }
         } else  { // presented
-            closeBarButtonIcon = closeBarButtonIcon ?? UIImage.closeImage().scaled(to: CGSize(width: 16, height: 16))?.withRenderingMode(.alwaysTemplate)
+            closeBarButton.image = closeBarButtonIcon ?? UIImage.closeImage().scaled(to: CGSize(width: 16, height: 16))?.withRenderingMode(.alwaysTemplate)
             if closeBarAction == nil {
                 closeBarAction = { [weak self] () in
                     self?.navigationController?.dismiss(animated: true, completion: nil)
