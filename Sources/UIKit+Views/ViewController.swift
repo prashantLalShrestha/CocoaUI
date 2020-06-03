@@ -90,7 +90,7 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
     public var closeBarButtonIcon: UIImage?
     public var backBarButtonIcon: UIImage?
     private lazy var closeBarButton: BarButtonItem = {
-        let view = BarButtonItem(image: UIImage.closeImage().scaled(to: CGSize(width: 32, height: 32))?.withRenderingMode(.alwaysTemplate),
+        let view = BarButtonItem(image: UIImage.closeImage().scaled(to: CGSize(width: 20, height: 20))?.withRenderingMode(.alwaysTemplate),
                                  style: .plain,
                                  target: self,
                                  action: #selector(closeAction))
@@ -203,14 +203,14 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
     // MARK: Adjusting Navigation Item
     func adjustLeftBarButtonItem() {
         if self.navigationController?.viewControllers.count ?? 0 > 1 { // Pushed
-            closeBarButtonIcon = backBarButtonIcon ?? UIImage.backArrowImage().scaled(to: CGSize(width: 32, height: 32))?.withRenderingMode(.alwaysTemplate)
+            closeBarButtonIcon = backBarButtonIcon ?? UIImage.backArrowImage().scaled(to: CGSize(width: 20, height: 20))?.withRenderingMode(.alwaysTemplate)
             if closeBarAction == nil {
                 closeBarAction = { [weak self] () in
                     self?.navigationController?.popViewController(animated: true)
                 }
             }
         } else  { // presented
-            closeBarButtonIcon = closeBarButtonIcon ?? UIImage.closeImage().scaled(to: CGSize(width: 32, height: 32))?.withRenderingMode(.alwaysTemplate)
+            closeBarButtonIcon = closeBarButtonIcon ?? UIImage.closeImage().scaled(to: CGSize(width: 20, height: 20))?.withRenderingMode(.alwaysTemplate)
             if closeBarAction == nil {
                 closeBarAction = { [weak self] () in
                     self?.navigationController?.dismiss(animated: true, completion: nil)
