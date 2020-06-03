@@ -34,8 +34,6 @@ open class CollectionViewCell: UICollectionViewCell, ThemeConfigurable {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
-        
         NotificationCenter.default.removeObserver(self, name: .themeToggled, object: nil)
     }
     
