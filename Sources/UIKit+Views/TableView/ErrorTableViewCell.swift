@@ -110,13 +110,14 @@ public class ErrorTableViewCell: TableViewCell {
         button.layer.borderColor = theme.textGray.cgColor
     }
     
-    public func bind(image: UIImage?, title: String?, description: String?, buttonTapAction: (() -> ())? = nil) {
+    public func bind(image: UIImage?, title: String?, description: String?, buttonTitle: String? = nil, buttonTapAction: (() -> ())? = nil) {
         errorImageView.image = image
         
         titleLabel.text = title
         descriptionLabel.text = description
         
         if let buttonTapAction = buttonTapAction {
+            button.setTitle(buttonTitle, for: .normal)
             button.alpha = 1.0
             button.isUserInteractionEnabled = true
             button.tapAction = { _ in
