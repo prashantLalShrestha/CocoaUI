@@ -73,7 +73,7 @@ extension ThemeType {
         let secondaryLight = defaults.string(forKey: "\(colorKey)_secondaryLight").map({ UIColor(hexString: $0) }) ?? nil
         let secondaryDark = defaults.string(forKey: "\(colorKey)_secondaryDark").map({ UIColor(hexString: $0) }) ?? nil
         let tertiary = defaults.string(forKey: "\(colorKey)_tertiary").map({ UIColor(hexString: $0) }) ?? nil
-        let theme = isDark ? ThemeType.dark(primary: primary, primaryLight: primaryLight, primaryDark: primaryDark, secondary: secondary, secondaryLight: secondaryLight, secondaryDark: secondaryDark, tertiary: tertiary) : ThemeType.light(primary: primary, primaryLight: primaryLight, primaryDark: primaryDark, secondary: secondary, secondaryLight: secondaryLight, secondaryDark: secondaryDark, tertiary: tertiary)
+        let theme = isDark ? ThemeType.dark(primary: primary?.themeCompatible(), primaryLight: primaryLight?.themeCompatible(), primaryDark: primaryDark?.themeCompatible(), secondary: secondary?.themeCompatible(), secondaryLight: secondaryLight?.themeCompatible(), secondaryDark: secondaryDark?.themeCompatible(), tertiary: tertiary?.themeCompatible()) : ThemeType.light(primary: primary?.themeCompatible(), primaryLight: primaryLight?.themeCompatible(), primaryDark: primaryDark?.themeCompatible(), secondary: secondary?.themeCompatible(), secondaryLight: secondaryLight?.themeCompatible(), secondaryDark: secondaryDark?.themeCompatible(), tertiary: tertiary?.themeCompatible())
         return theme
     }
     
@@ -169,5 +169,55 @@ fileprivate extension UIColor {
         let green = CGFloat((hexValue >> 8) & 0xff)
         let blue = CGFloat(hexValue & 0xff)
         self.init(red: red, green: green, blue: blue, alpha: transparency)
+    }
+    
+    func themeCompatible() -> UIColor {
+        let r = redComponent
+        let g = greenComponent
+        let b = blueComponent
+        let a = alphaComponent
+        return UIColor(red: r / 255, green: g / 255, blue: b / 255, alpha: a)
+    }
+
+    var redComponent: CGFloat {
+      var red: CGFloat = 0
+      getRed(&red, green: nil , blue: nil, alpha: nil)
+      return red
+    }
+
+    var greenComponent: CGFloat {
+      var green: CGFloat = 0
+      getRed(nil, green: &green , blue: nil, alpha: nil)
+      return green
+    }
+
+    var blueComponent: CGFloat {
+      var blue: CGFloat = 0
+      getRed(nil, green: nil , blue: &blue, alpha: nil)
+      return blue
+    }
+
+    var alphaComponent: CGFloat {
+      var alpha: CGFloat = 0
+      getRed(nil, green: nil , blue: nil, alpha: &alpha)
+      return alpha
+    }
+
+    var hueComponent: CGFloat {
+      var hue: CGFloat = 0
+      getHue(&hue, saturation: nil, brightness: nil, alpha: nil)
+      return hue
+    }
+
+    var saturationComponent: CGFloat {
+      var saturation: CGFloat = 0
+      getHue(nil, saturation: &saturation, brightness: nil, alpha: nil)
+      return saturation
+    }
+
+    var brightnessComponent: CGFloat {
+      var brightness: CGFloat = 0
+      getHue(nil, saturation: nil, brightness: &brightness, alpha: nil)
+      return brightness
     }
 }

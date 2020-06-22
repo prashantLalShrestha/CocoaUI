@@ -11,7 +11,7 @@ import DeviceX
 
 public extension UIFont {
     struct FontSize {
-        static var veryLarge: CGFloat {
+        public static var veryLarge: CGFloat {
             switch UIDevice.deviceSize {
             case .screen4Inches:
                 return 28
@@ -23,7 +23,7 @@ public extension UIFont {
                 return 40
             }
         }
-        static var  large: CGFloat {
+        public static var  large: CGFloat {
             switch UIDevice.deviceSize {
             case .screen4Inches:
                 return 22
@@ -35,7 +35,7 @@ public extension UIFont {
                 return 26
             }
         }
-        static var mediumLarge: CGFloat {
+        public static var mediumLarge: CGFloat {
             switch UIDevice.deviceSize {
             case .screen4Inches:
                 return 17
@@ -47,7 +47,7 @@ public extension UIFont {
                 return 20
             }
         }
-        static var  regular: CGFloat {
+        public static var  regular: CGFloat {
             switch UIDevice.deviceSize {
             case .screen4Inches:
                 return 15
@@ -59,7 +59,7 @@ public extension UIFont {
                 return 17
             }
         }
-        static var mediumSmall: CGFloat {
+        public static var mediumSmall: CGFloat {
             switch UIDevice.deviceSize {
             case .screen4Inches:
                 return 14
@@ -71,7 +71,7 @@ public extension UIFont {
                 return 16
             }
         }
-        static var small: CGFloat {
+        public static var small: CGFloat {
             switch UIDevice.deviceSize {
             case .screen4Inches:
                 return 13
@@ -83,7 +83,7 @@ public extension UIFont {
                 return 14
             }
         }
-        static var verySmall: CGFloat {
+        public static var verySmall: CGFloat {
             switch UIDevice.deviceSize {
             case .screen4Inches:
                 return 10

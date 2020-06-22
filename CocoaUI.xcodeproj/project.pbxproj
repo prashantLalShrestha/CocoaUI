@@ -46,6 +46,7 @@
 		8F14D3B52473098B0017DF70 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14D3B22473098B0017DF70 /* CollectionViewCell.swift */; };
 		8F14D3B62473098B0017DF70 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14D3B32473098B0017DF70 /* CollectionViewController.swift */; };
 		8F14D3B824730A5A0017DF70 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14D3B724730A5A0017DF70 /* TabBarController.swift */; };
+		8F3257F024A126400016B309 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3257EF24A126400016B309 /* UIFont+Ext.swift */; };
 		8F6C03F02472854A006FCBB6 /* CocoaUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6C03E62472854A006FCBB6 /* CocoaUI.framework */; };
 		8F6C03F52472854A006FCBB6 /* CocoaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C03F42472854A006FCBB6 /* CocoaUITests.swift */; };
 		8F6C03F72472854A006FCBB6 /* CocoaUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F6C03E92472854A006FCBB6 /* CocoaUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -115,6 +116,7 @@
 		8F14D3B22473098B0017DF70 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8F14D3B32473098B0017DF70 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		8F14D3B724730A5A0017DF70 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8F3257EF24A126400016B309 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		8F6C03E62472854A006FCBB6 /* CocoaUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6C03E92472854A006FCBB6 /* CocoaUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaUI.h; sourceTree = "<group>"; };
 		8F6C03EA2472854A006FCBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				8F14D2FB2472D71C0017DF70 /* UITabBarController+Ext.swift */,
 				8F14D2F92472D6A50017DF70 /* UIScrollView+Ext.swift */,
 				8F14D2FD2472D7600017DF70 /* UIView+Ext.swift */,
+				8F3257EF24A126400016B309 /* UIFont+Ext.swift */,
 				8F14D3052472DA370017DF70 /* UIBarButton+Badges.swift */,
 				8F14D3072472DA550017DF70 /* WKWebView+Ext.swift */,
 				8F14D3092472DAAB0017DF70 /* CAGradientLayer+Ext.swift */,
@@ -572,6 +575,7 @@
 				8F86DB5E2474F0A500BE8F10 /* Theme.swift in Sources */,
 				8F14D3382472ECF40017DF70 /* TableView.swift in Sources */,
 				8F14D3042472D96A0017DF70 /* UIFont+App.swift in Sources */,
+				8F3257F024A126400016B309 /* UIFont+Ext.swift in Sources */,
 				8F14D2FA2472D6A50017DF70 /* UIScrollView+Ext.swift in Sources */,
 				8F86DB602474F0A500BE8F10 /* UIColor+Extra.swift in Sources */,
 				8F14D3232472E86A0017DF70 /* SwiftWebVC.swift in Sources */,

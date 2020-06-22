@@ -188,3 +188,86 @@ public extension UIView {
     }
     
 }
+
+
+// MARK: - CONSTRAINTS
+public extension UIView {
+    func removeAllConstraints() {
+        var _superview = self.superview
+        
+        while let superview = _superview {
+            for constraint in superview.constraints {
+                
+                if let first = constraint.firstItem as? UIView, first == self {
+                    superview.removeConstraint(constraint)
+                }
+                
+                if let second = constraint.secondItem as? UIView, second == self {
+                    superview.removeConstraint(constraint)
+                }
+            }
+            
+            _superview = superview.superview
+        }
+        
+        self.removeConstraints(self.constraints)
+        self.translatesAutoresizingMaskIntoConstraints = true
+    }
+    
+    func pinEdges(to view: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: view.topAnchor),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+    
+    func makeConstraints(top: NSLayoutYAxisAnchor?, bottom: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero){
+        translatesAutoresizingMaskIntoConstraints = false
+        if let top = top {
+            topAnchor.constraint(equalTo: top, constant: padding.top).isActive = true
+        }
+        
+        if let bottom = bottom {
+            bottomAnchor.constraint(equalTo: bottom, constant: -padding.bottom).isActive = true
+        }
+        
+        if let leading = leading {
+            leadingAnchor.constraint(equalTo: leading, constant: padding.left).isActive = true
+        }
+        
+        if let trailing = trailing {
+            trailingAnchor.constraint(equalTo: trailing, constant: -padding.right).isActive = true
+        }
+        
+        if size.height != 0 {
+            heightAnchor.constraint(equalToConstant: size.height).isActive = true
+        }
+        
+        if size.width != 0 {
+            widthAnchor.constraint(equalToConstant: size.width).isActive = true
+        }
+    }
+    
+    func pinEdgesToSuperView() {
+        translatesAutoresizingMaskIntoConstraints = false
+        makeConstraints(top: superview?.topAnchor, bottom: superview?.bottomAnchor, leading: superview?.leadingAnchor, trailing: superview?.trailingAnchor)
+    }
+    
+    func makeEqualWidth(to view: UIView, multiplyBy: CGFloat = 1) {
+        widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: multiplyBy ).isActive = true
+    }
+    
+    func makeEqualHeight(to view: UIView, multiplyBy: CGFloat = 1) {
+        heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: multiplyBy).isActive = true
+    }
+    
+    func addSubviews(_ subviews: [UIView]) {
+        subviews.forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            addSubview($0)
+        }
+    }
+}
