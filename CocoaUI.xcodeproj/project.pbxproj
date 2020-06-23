@@ -59,6 +59,7 @@
 		8F86DB5F2474F0A500BE8F10 /* NotificationName+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F86DB5A2474F0A500BE8F10 /* NotificationName+Theme.swift */; };
 		8F86DB602474F0A500BE8F10 /* UIColor+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F86DB5B2474F0A500BE8F10 /* UIColor+Extra.swift */; };
 		8F86DB622474F2FF00BE8F10 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F86DB612474F2FF00BE8F10 /* Button.swift */; };
+		8FBCDACA24A214E6004EAE88 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBCDAC924A214E5004EAE88 /* TextField.swift */; };
 		8FDA6A8F247D57B9000E765C /* UIImage+Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA6A8E247D57B9000E765C /* UIImage+Shapes.swift */; };
 		CC941BC56514A721444E9A6C /* Pods_CocoaUI_CocoaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FAC1580C315E7141ED8B3B /* Pods_CocoaUI_CocoaUITests.framework */; };
 /* End PBXBuildFile section */
@@ -132,6 +133,7 @@
 		8F86DB5A2474F0A500BE8F10 /* NotificationName+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationName+Theme.swift"; sourceTree = "<group>"; };
 		8F86DB5B2474F0A500BE8F10 /* UIColor+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extra.swift"; sourceTree = "<group>"; };
 		8F86DB612474F2FF00BE8F10 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		8FBCDAC924A214E5004EAE88 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		8FDA6A8E247D57B9000E765C /* UIImage+Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Shapes.swift"; sourceTree = "<group>"; };
 		D2FAC1580C315E7141ED8B3B /* Pods_CocoaUI_CocoaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaUI_CocoaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9AA624B6C9C17DBDDD6F8E /* Pods-CocoaUI-CocoaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaUI-CocoaUITests.release.xcconfig"; path = "../../CoreKits/DevelopmentPods/CocoaUI/Pods/Target Support Files/Pods-CocoaUI-CocoaUITests/Pods-CocoaUI-CocoaUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		8F14D30F2472DC810017DF70 /* UIKit+Views */ = {
 			isa = PBXGroup;
 			children = (
+				8FBCDAC924A214E5004EAE88 /* TextField.swift */,
 				8F14D3B02473098B0017DF70 /* CollectionView */,
 				8F14D3102472E5BE0017DF70 /* TabBarItem.swift */,
 				8F14D3122472E66D0017DF70 /* ImagePicker.swift */,
@@ -576,6 +579,7 @@
 				8F14D3382472ECF40017DF70 /* TableView.swift in Sources */,
 				8F14D3042472D96A0017DF70 /* UIFont+App.swift in Sources */,
 				8F3257F024A126400016B309 /* UIFont+Ext.swift in Sources */,
+				8FBCDACA24A214E6004EAE88 /* TextField.swift in Sources */,
 				8F14D2FA2472D6A50017DF70 /* UIScrollView+Ext.swift in Sources */,
 				8F86DB602474F0A500BE8F10 /* UIColor+Extra.swift in Sources */,
 				8F14D3232472E86A0017DF70 /* SwiftWebVC.swift in Sources */,
