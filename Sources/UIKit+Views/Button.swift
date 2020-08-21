@@ -46,7 +46,7 @@ open class Button: UIButton {
         self.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
     
-    public func applyTheme(theme: Theme, type: ColorThemeType) {
+    open func applyTheme(theme: Theme, type: ColorThemeType) {
         switch type {
         case .primary:
             self.backgroundColor = theme.primary

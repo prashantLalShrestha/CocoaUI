@@ -107,7 +107,7 @@ public class ErrorTableViewCell: TableViewCell {
         
         button.backgroundColor = theme.clear
         button.setTitleColor(theme.text, for: .normal)
-        button.layer.borderColor = theme.textGray.cgColor
+        button.layer.borderColor = theme.textDark.cgColor
     }
     
     public func bind(image: UIImage?, title: String?, description: String?, buttonTitle: String? = nil, buttonTapAction: (() -> ())? = nil) {

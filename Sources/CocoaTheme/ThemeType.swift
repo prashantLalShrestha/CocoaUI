@@ -15,15 +15,15 @@ public enum ColorThemeType {
 }
 
 public enum ThemeType {
-    case light(primary: UIColor?, primaryLight: UIColor?, primaryDark: UIColor?, secondary: UIColor?, secondaryLight: UIColor?, secondaryDark: UIColor?, tertiary: UIColor?)
-    case dark(primary: UIColor?, primaryLight: UIColor?, primaryDark: UIColor?, secondary: UIColor?, secondaryLight: UIColor?, secondaryDark: UIColor?, tertiary: UIColor?)
+    case light(primary: UIColor?, primaryLight: UIColor?, primaryDark: UIColor?, secondary: UIColor?, secondaryLight: UIColor?, secondaryDark: UIColor?, tertiary: UIColor?, text: UIColor? = nil, textLight: UIColor? = nil, textDark: UIColor? = nil, textError: UIColor? = nil, background: UIColor? = nil, backgroundLight: UIColor? = nil, backgroundDark: UIColor? = nil)
+    case dark(primary: UIColor?, primaryLight: UIColor?, primaryDark: UIColor?, secondary: UIColor?, secondaryLight: UIColor?, secondaryDark: UIColor?, tertiary: UIColor?, text: UIColor? = nil, textLight: UIColor? = nil, textDark: UIColor? = nil, textError: UIColor? = nil, background: UIColor? = nil, backgroundLight: UIColor? = nil, backgroundDark: UIColor? = nil)
     
     public var associatedObject: Theme {
         switch self {
-        case .light(let primary, let primaryLight, let primaryDark, let secondary, let secondaryLight, let secondaryDark, let tertiary):
-            return LightTheme(primary: primary, primaryLight: primaryLight, primaryDark: primaryDark, secondary: secondary, secondaryLight: secondaryLight, secondaryDark: secondaryDark, tertiary: tertiary)
-        case .dark(let primary, let primaryLight, let primaryDark, let secondary, let secondaryLight, let secondaryDark, let tertiary):
-            return DarkTheme(primary: primary, primaryLight: primaryLight, primaryDark: primaryDark, secondary: secondary, secondaryLight: secondaryLight, secondaryDark: secondaryDark, tertiary: tertiary)
+        case .light(let primary, let primaryLight, let primaryDark, let secondary, let secondaryLight, let secondaryDark, let tertiary, let text, let textLight, let textDark, let textError, let background, let backgroundLight, let backgroundDark):
+            return LightTheme(primary: primary, primaryLight: primaryLight, primaryDark: primaryDark, secondary: secondary, secondaryLight: secondaryLight, secondaryDark: secondaryDark, tertiary: tertiary, text: text, textLight: textLight, textDark: textDark, textError: textError, background: background, backgroundLight: backgroundLight, backgroundDark: backgroundDark)
+        case .dark(let primary, let primaryLight, let primaryDark, let secondary, let secondaryLight, let secondaryDark, let tertiary, let text, let textLight, let textDark, let textError, let background, let backgroundLight, let backgroundDark):
+            return DarkTheme(primary: primary, primaryLight: primaryLight, primaryDark: primaryDark, secondary: secondary, secondaryLight: secondaryLight, secondaryDark: secondaryDark, tertiary: tertiary, text: text, textLight: textLight, textDark: textDark, textError: textError, background: background, backgroundLight: backgroundLight, backgroundDark: backgroundDark)
         }
     }
     
@@ -46,7 +46,14 @@ public enum ThemeType {
             let secondaryLight = defaults.string(forKey: "dark_secondaryLight").map({ UIColor(hexString: $0) }) ?? nil
             let secondaryDark = defaults.string(forKey: "dark_secondaryDark").map({ UIColor(hexString: $0) }) ?? nil
             let tertiary = defaults.string(forKey: "dark_tertiary").map({ UIColor(hexString: $0) }) ?? nil
-            theme = ThemeType.dark(primary: primary, primaryLight: primaryLight, primaryDark: primaryDark, secondary: secondary, secondaryLight: secondaryLight, secondaryDark: secondaryDark, tertiary: tertiary)
+            let text = defaults.string(forKey: "dark_text").map({ UIColor(hexString: $0) }) ?? nil
+            let textLight = defaults.string(forKey: "dark_textLight").map({ UIColor(hexString: $0) }) ?? nil
+            let textDark = defaults.string(forKey: "dark_textDark").map({ UIColor(hexString: $0) }) ?? nil
+            let textError = defaults.string(forKey: "dark_textError").map({ UIColor(hexString: $0) }) ?? nil
+            let background = defaults.string(forKey: "dark_background").map({ UIColor(hexString: $0) }) ?? nil
+            let backgroundLight = defaults.string(forKey: "dark_backgroundLight").map({ UIColor(hexString: $0) }) ?? nil
+            let backgroundDark = defaults.string(forKey: "dark_backgroundDark").map({ UIColor(hexString: $0) }) ?? nil
+            theme = ThemeType.dark(primary: primary, primaryLight: primaryLight, primaryDark: primaryDark, secondary: secondary, secondaryLight: secondaryLight, secondaryDark: secondaryDark, tertiary: tertiary,text: text, textLight: textLight, textDark: textDark, textError: textError, background: background, backgroundLight: backgroundLight, backgroundDark: backgroundDark)
         case .dark:
             let primary = defaults.string(forKey: "light_primary").map({ UIColor(hexString: $0) }) ?? nil
             let primaryLight = defaults.string(forKey: "light_primaryLight").map({ UIColor(hexString: $0) }) ?? nil
@@ -55,7 +62,14 @@ public enum ThemeType {
             let secondaryLight = defaults.string(forKey: "light_secondaryLight").map({ UIColor(hexString: $0) }) ?? nil
             let secondaryDark = defaults.string(forKey: "light_secondaryDark").map({ UIColor(hexString: $0) }) ?? nil
             let tertiary = defaults.string(forKey: "light_tertiary").map({ UIColor(hexString: $0) }) ?? nil
-            theme = ThemeType.light(primary: primary, primaryLight: primaryLight, primaryDark: primaryDark, secondary: secondary, secondaryLight: secondaryLight, secondaryDark: secondaryDark, tertiary: tertiary)
+            let text = defaults.string(forKey: "light_text").map({ UIColor(hexString: $0) }) ?? nil
+            let textLight = defaults.string(forKey: "light_textLight").map({ UIColor(hexString: $0) }) ?? nil
+            let textDark = defaults.string(forKey: "light_textDark").map({ UIColor(hexString: $0) }) ?? nil
+            let textError = defaults.string(forKey: "light_textError").map({ UIColor(hexString: $0) }) ?? nil
+            let background = defaults.string(forKey: "light_background").map({ UIColor(hexString: $0) }) ?? nil
+            let backgroundLight = defaults.string(forKey: "light_backgroundLight").map({ UIColor(hexString: $0) }) ?? nil
+            let backgroundDark = defaults.string(forKey: "light_backgroundDark").map({ UIColor(hexString: $0) }) ?? nil
+            theme = ThemeType.light(primary: primary, primaryLight: primaryLight, primaryDark: primaryDark, secondary: secondary, secondaryLight: secondaryLight, secondaryDark: secondaryDark, tertiary: tertiary, text: text, textLight: textLight, textDark: textDark, textError: textError, background: background, backgroundLight: backgroundLight, backgroundDark: backgroundDark)
         }
         theme.save()
     }
@@ -98,7 +112,7 @@ extension ThemeType {
         theme.save()
     }
     
-    public static func setLightThemeColor(primary: UIColor, primaryLight: UIColor, primaryDark: UIColor, secondary: UIColor, secondaryLight: UIColor, secondaryDark: UIColor, tertiary: UIColor) {
+    public static func setLightThemeColor(primary: UIColor, primaryLight: UIColor, primaryDark: UIColor, secondary: UIColor, secondaryLight: UIColor, secondaryDark: UIColor, tertiary: UIColor, text: UIColor? = nil, textLight: UIColor? = nil, textDark: UIColor? = nil, textError: UIColor? = nil, background: UIColor? = nil, backgroundLight: UIColor? = nil, backgroundDark: UIColor? = nil) {
         let defaults = UserDefaults.standard
         defaults.set(primary.hexString, forKey: "light_primary")
         defaults.set(primaryLight.hexString, forKey: "light_primaryLight")
@@ -107,9 +121,32 @@ extension ThemeType {
         defaults.set(secondaryLight.hexString, forKey: "light_secondaryLight")
         defaults.set(secondaryDark.hexString, forKey: "light_secondaryDark")
         defaults.set(tertiary.hexString, forKey: "light_tertiary")
+        
+        if let text = text {
+            defaults.set(text.hexString, forKey: "light_text")
+        }
+        if let textLight = textLight {
+            defaults.set(textLight.hexString, forKey: "light_textLight")
+        }
+        if let textDark = textDark {
+            defaults.set(textDark.hexString, forKey: "light_textDark")
+        }
+        if let textError = textError {
+            defaults.set(textError.hexString, forKey: "light_textError")
+        }
+        
+        if let background = background {
+            defaults.set(background.hexString, forKey: "light_background")
+        }
+        if let backgroundLight = backgroundLight {
+            defaults.set(backgroundLight.hexString, forKey: "light_backgroundLight")
+        }
+        if let backgroundDark = backgroundDark {
+            defaults.set(backgroundDark.hexString, forKey: "light_backgroundDark")
+        }
     }
     
-    public static func setDarkThemeColor(primary: UIColor, primaryLight: UIColor, primaryDark: UIColor, secondary: UIColor, secondaryLight: UIColor, secondaryDark: UIColor, tertiary: UIColor) {
+    public static func setDarkThemeColor(primary: UIColor, primaryLight: UIColor, primaryDark: UIColor, secondary: UIColor, secondaryLight: UIColor, secondaryDark: UIColor, tertiary: UIColor, text: UIColor? = nil, textLight: UIColor? = nil, textDark: UIColor? = nil, textError: UIColor? = nil, background: UIColor? = nil, backgroundLight: UIColor? = nil, backgroundDark: UIColor? = nil) {
         let defaults = UserDefaults.standard
         defaults.set(primary.hexString, forKey: "dark_primary")
         defaults.set(primaryLight.hexString, forKey: "dark_primaryLight")
@@ -118,6 +155,29 @@ extension ThemeType {
         defaults.set(secondaryLight.hexString, forKey: "dark_secondaryLight")
         defaults.set(secondaryDark.hexString, forKey: "dark_secondaryDark")
         defaults.set(tertiary.hexString, forKey: "dark_tertiary")
+        
+        if let text = text {
+            defaults.set(text.hexString, forKey: "dark_text")
+        }
+        if let textLight = textLight {
+            defaults.set(textLight.hexString, forKey: "dark_textLight")
+        }
+        if let textDark = textDark {
+            defaults.set(textDark.hexString, forKey: "dark_textDark")
+        }
+        if let textError = textError {
+            defaults.set(textError.hexString, forKey: "dark_textError")
+        }
+        
+        if let background = background {
+            defaults.set(background.hexString, forKey: "dark_background")
+        }
+        if let backgroundLight = backgroundLight {
+            defaults.set(backgroundLight.hexString, forKey: "dark_backgroundLight")
+        }
+        if let backgroundDark = backgroundDark {
+            defaults.set(backgroundDark.hexString, forKey: "dark_backgroundDark")
+        }
     }
     
     func save() {

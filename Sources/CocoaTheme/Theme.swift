@@ -16,14 +16,12 @@ public protocol Theme {
     var secondaryLight: UIColor { get }
     var secondaryDark: UIColor { get }
     var tertiary: UIColor { get }
-    var separator: UIColor { get }
-    var separatorDark: UIColor { get }
     var text: UIColor { get }
     var textLight: UIColor { get }
-    var textGray: UIColor { get }
-    var textInactive: UIColor { get }
+    var textDark: UIColor { get }
     var textError: UIColor { get }
     var background: UIColor { get }
+    var backgroundLight: UIColor { get }
     var backgroundDark: UIColor { get }
     var statusBarStyle: UIStatusBarStyle { get }
     var barStyle: UIBarStyle { get }
@@ -43,22 +41,22 @@ struct LightTheme: Theme {
     var tertiary: UIColor = #colorLiteral(red: 0.9960784314, green: 0.1921568627, blue: 0.1803921569, alpha: 1)
     let separator: UIColor = UIColor.Extra.iceBlue
     let separatorDark: UIColor = UIColor.Extra.lightBlueGrey
-    let text: UIColor = UIColor.Extra.dark
-    let textLight: UIColor = UIColor.Extra.greyBlue
-    let textGray: UIColor = UIColor.Extra.darkGreyBlue
-    let textInactive: UIColor = UIColor.Extra.gunmetal
-    let textError: UIColor = UIColor.red
-    let background: UIColor = UIColor.white
-    let backgroundDark: UIColor = UIColor.Extra.iceBlue
+    var text: UIColor = UIColor.Extra.dark
+    var textLight: UIColor = UIColor.Extra.greyBlue
+    var textDark: UIColor = UIColor.Extra.darkGreyBlue
+    var textError: UIColor = UIColor.red
+    var background: UIColor = UIColor.white
+    var backgroundLight: UIColor = UIColor.Extra.iceBlue
+    var backgroundDark: UIColor = UIColor.Extra.lightBlueGrey
     let statusBarStyle = UIStatusBarStyle.default
     let barStyle = UIBarStyle.default
     let keyboardAppearance = UIKeyboardAppearance.light
     let blurStyle = UIBlurEffect.Style.extraLight
-    let shadow: UIColor = UIColor(named: "col_shadow", in: Bundle.main, compatibleWith: nil) ?? UIColor.black
+    let shadow: UIColor = UIColor.black
     let clear: UIColor = UIColor.clear
     
 
-    public init(primary: UIColor?, primaryLight: UIColor?, primaryDark: UIColor?, secondary: UIColor?, secondaryLight: UIColor?, secondaryDark: UIColor?, tertiary: UIColor?) {
+    public init(primary: UIColor?, primaryLight: UIColor?, primaryDark: UIColor?, secondary: UIColor?, secondaryLight: UIColor?, secondaryDark: UIColor?, tertiary: UIColor?, text: UIColor? = nil, textLight: UIColor? = nil, textDark: UIColor? = nil, textError: UIColor? = nil, background: UIColor? = nil, backgroundLight: UIColor? = nil, backgroundDark: UIColor? = nil) {
         self.primary = primary ?? self.primary
         self.primaryLight = primaryLight ?? self.primaryLight
         self.primaryDark = primaryDark ?? self.primaryDark
@@ -66,6 +64,13 @@ struct LightTheme: Theme {
         self.secondaryLight = secondaryLight ?? self.secondaryLight
         self.secondaryDark = secondaryDark ?? self.secondaryDark
         self.tertiary = tertiary ?? self.tertiary
+        self.text = text ?? self.text
+        self.textLight = textLight ?? self.textLight
+        self.textDark = textDark ?? self.textDark
+        self.textError = textError ?? self.textError
+        self.background = background ?? self.background
+        self.backgroundLight = backgroundLight ?? self.backgroundLight
+        self.backgroundDark = backgroundDark ?? self.backgroundDark
     }
 }
 
@@ -77,15 +82,13 @@ struct DarkTheme: Theme {
     var secondaryLight: UIColor = #colorLiteral(red: 0.007843137255, green: 0.7450980392, blue: 0.6980392157, alpha: 1)
     var secondaryDark: UIColor = #colorLiteral(red: 0.007843137255, green: 0.6784313725, blue: 0.6352941176, alpha: 1)
     var tertiary: UIColor = #colorLiteral(red: 0.9960784314, green: 0.1921568627, blue: 0.1803921569, alpha: 1)
-    let separator: UIColor = UIColor.black
-    let separatorDark: UIColor = UIColor.Extra.lightBlueGrey
-    let text: UIColor = UIColor.white
-    let textLight: UIColor = UIColor.Extra.greyBlue
-    let textGray: UIColor = UIColor.Extra.darkGreyBlue
-    let textInactive: UIColor = UIColor.Extra.gunmetal
-    let background: UIColor = UIColor.black
-    let backgroundDark: UIColor = UIColor.black
-    let textError: UIColor = UIColor.red
+    var text: UIColor = UIColor.white
+    var textLight: UIColor = UIColor.Extra.greyBlue
+    var textDark: UIColor = UIColor.Extra.darkGreyBlue
+    var textError: UIColor = UIColor.red
+    var background: UIColor = UIColor.black
+    var backgroundLight: UIColor = UIColor.Extra.lightBlueGrey
+    var backgroundDark: UIColor = UIColor.black
     let statusBarStyle = UIStatusBarStyle.lightContent
     let barStyle = UIBarStyle.black
     let keyboardAppearance = UIKeyboardAppearance.dark
@@ -93,7 +96,7 @@ struct DarkTheme: Theme {
     let shadow: UIColor = UIColor.white
     let clear: UIColor = UIColor.clear
     
-    public init(primary: UIColor?, primaryLight: UIColor?, primaryDark: UIColor?, secondary: UIColor?, secondaryLight: UIColor?, secondaryDark: UIColor?, tertiary: UIColor?) {
+    public init(primary: UIColor?, primaryLight: UIColor?, primaryDark: UIColor?, secondary: UIColor?, secondaryLight: UIColor?, secondaryDark: UIColor?, tertiary: UIColor?, text: UIColor? = nil, textLight: UIColor? = nil, textDark: UIColor? = nil, textError: UIColor? = nil, background: UIColor? = nil, backgroundLight: UIColor? = nil, backgroundDark: UIColor? = nil) {
         self.primary = primary ?? self.primary
         self.primaryLight = primaryLight ?? self.primaryLight
         self.primaryDark = primaryDark ?? self.primaryDark
@@ -101,6 +104,13 @@ struct DarkTheme: Theme {
         self.secondaryLight = secondaryLight ?? self.secondaryLight
         self.secondaryDark = secondaryDark ?? self.secondaryDark
         self.tertiary = tertiary ?? self.tertiary
+        self.text = text ?? self.text
+        self.textLight = textLight ?? self.textLight
+        self.textDark = textDark ?? self.textDark
+        self.textError = textError ?? self.textError
+        self.background = background ?? self.background
+        self.backgroundLight = backgroundLight ?? self.backgroundLight
+        self.backgroundDark = backgroundDark ?? self.backgroundDark
     }
     
 }
