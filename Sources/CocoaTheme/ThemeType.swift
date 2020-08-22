@@ -87,7 +87,14 @@ extension ThemeType {
         let secondaryLight = defaults.string(forKey: "\(colorKey)_secondaryLight").map({ UIColor(hexString: $0) }) ?? nil
         let secondaryDark = defaults.string(forKey: "\(colorKey)_secondaryDark").map({ UIColor(hexString: $0) }) ?? nil
         let tertiary = defaults.string(forKey: "\(colorKey)_tertiary").map({ UIColor(hexString: $0) }) ?? nil
-        let theme = isDark ? ThemeType.dark(primary: primary?.themeCompatible(), primaryLight: primaryLight?.themeCompatible(), primaryDark: primaryDark?.themeCompatible(), secondary: secondary?.themeCompatible(), secondaryLight: secondaryLight?.themeCompatible(), secondaryDark: secondaryDark?.themeCompatible(), tertiary: tertiary?.themeCompatible()) : ThemeType.light(primary: primary?.themeCompatible(), primaryLight: primaryLight?.themeCompatible(), primaryDark: primaryDark?.themeCompatible(), secondary: secondary?.themeCompatible(), secondaryLight: secondaryLight?.themeCompatible(), secondaryDark: secondaryDark?.themeCompatible(), tertiary: tertiary?.themeCompatible())
+        let text = defaults.string(forKey: "\(colorKey)_text").map({ UIColor(hexString: $0) }) ?? nil
+        let textLight = defaults.string(forKey: "\(colorKey)_textLight").map({ UIColor(hexString: $0) }) ?? nil
+        let textDark = defaults.string(forKey: "\(colorKey)_textDark").map({ UIColor(hexString: $0) }) ?? nil
+        let textError = defaults.string(forKey: "\(colorKey)_textError").map({ UIColor(hexString: $0) }) ?? nil
+        let background = defaults.string(forKey: "\(colorKey)_background").map({ UIColor(hexString: $0) }) ?? nil
+        let backgroundLight = defaults.string(forKey: "\(colorKey)_backgroundLight").map({ UIColor(hexString: $0) }) ?? nil
+        let backgroundDark = defaults.string(forKey: "\(colorKey)_backgroundDark").map({ UIColor(hexString: $0) }) ?? nil
+        let theme = isDark ? ThemeType.dark(primary: primary?.themeCompatible(), primaryLight: primaryLight?.themeCompatible(), primaryDark: primaryDark?.themeCompatible(), secondary: secondary?.themeCompatible(), secondaryLight: secondaryLight?.themeCompatible(), secondaryDark: secondaryDark?.themeCompatible(), tertiary: tertiary?.themeCompatible(), text: text?.themeCompatible(), textLight: textLight?.themeCompatible(), textDark: textDark?.themeCompatible(), textError: textError?.themeCompatible(), background: background?.themeCompatible(), backgroundLight: backgroundLight?.themeCompatible(), backgroundDark: backgroundDark?.themeCompatible()) : ThemeType.light(primary: primary?.themeCompatible(), primaryLight: primaryLight?.themeCompatible(), primaryDark: primaryDark?.themeCompatible(), secondary: secondary?.themeCompatible(), secondaryLight: secondaryLight?.themeCompatible(), secondaryDark: secondaryDark?.themeCompatible(), tertiary: tertiary?.themeCompatible(), text: text?.themeCompatible(), textLight: textLight?.themeCompatible(), textDark: textDark?.themeCompatible(), textError: textError?.themeCompatible(), background: background?.themeCompatible(), backgroundLight: backgroundLight?.themeCompatible(), backgroundDark: backgroundDark?.themeCompatible())
         return theme
     }
     
@@ -101,6 +108,13 @@ extension ThemeType {
         defaults.set(nil, forKey: "light_secondaryLight")
         defaults.set(nil, forKey: "light_secondaryDark")
         defaults.set(nil, forKey: "light_tertiary")
+        defaults.set(nil, forKey: "light_text")
+        defaults.set(nil, forKey: "light_textLight")
+        defaults.set(nil, forKey: "light_textDark")
+        defaults.set(nil, forKey: "light_textError")
+        defaults.set(nil, forKey: "light_background")
+        defaults.set(nil, forKey: "light_backgroundLight")
+        defaults.set(nil, forKey: "light_backgroundDark")
         defaults.set(nil, forKey: "dark_primary")
         defaults.set(nil, forKey: "dark_primaryLight")
         defaults.set(nil, forKey: "dark_primaryDark")
@@ -108,6 +122,13 @@ extension ThemeType {
         defaults.set(nil, forKey: "dark_secondaryLight")
         defaults.set(nil, forKey: "dark_secondaryDark")
         defaults.set(nil, forKey: "dark_tertiary")
+        defaults.set(nil, forKey: "dark_text")
+        defaults.set(nil, forKey: "dark_textLight")
+        defaults.set(nil, forKey: "dark_textDark")
+        defaults.set(nil, forKey: "dark_textError")
+        defaults.set(nil, forKey: "dark_background")
+        defaults.set(nil, forKey: "dark_backgroundLight")
+        defaults.set(nil, forKey: "dark_backgroundDark")
         let theme = isDark ? ThemeType.dark(primary: nil, primaryLight: nil, primaryDark: nil, secondary: nil, secondaryLight: nil, secondaryDark: nil, tertiary: nil) : ThemeType.light(primary: nil, primaryLight: nil, primaryDark: nil, secondary: nil, secondaryLight: nil, secondaryDark: nil, tertiary: nil)
         theme.save()
     }
