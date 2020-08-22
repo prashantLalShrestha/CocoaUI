@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class SplitViewController: UISplitViewController {
+open class SplitViewController: UISplitViewController {
 
 
     override public func viewDidLoad() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class SegmentedControl: UISegmentedControl {
+open class SegmentedControl: UISegmentedControl {
     
     public var valueChanged: ((_ sender: SegmentedControl) -> ())?
 
@@ -27,13 +27,13 @@ public class SegmentedControl: UISegmentedControl {
         makeUI()
     }
 
-    public func makeUI() {
+    open func makeUI() {
         self.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
         layer.masksToBounds = true
         updateUI()
     }
 
-    public func updateUI() {
+    open func updateUI() {
         setNeedsDisplay()
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Label: UILabel {
+open class Label: UILabel {
     
     public var textInsets = UIEdgeInsets.zero {
         didSet { invalidateIntrinsicContentSize() }
@@ -24,14 +24,14 @@ public class Label: UILabel {
         makeUI()
     }
     
-    public func makeUI() {
+    open func makeUI() {
         layer.masksToBounds = true
         numberOfLines = 1
         //        cornerRadius = Configs.BaseDimensions.cornerRadius
         updateUI()
     }
     
-    public func updateUI() {
+    open func updateUI() {
         setNeedsDisplay()
     }
 }

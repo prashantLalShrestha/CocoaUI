@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class StackView: UIStackView {
+open class StackView: UIStackView {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,7 +21,7 @@ public class StackView: UIStackView {
         makeUI()
     }
     
-    public func makeUI() {
+    open func makeUI() {
         spacing = 0
         axis = .vertical
         distribution = .fill
@@ -29,7 +29,7 @@ public class StackView: UIStackView {
         updateUI()
     }
     
-    public func updateUI() {
+    open func updateUI() {
         setNeedsDisplay()
     }
 }

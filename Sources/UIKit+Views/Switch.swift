@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Switch: UISwitch {
+open class Switch: UISwitch {
     
     public var toggled: ((_ sender: Switch) -> ())?
     
@@ -22,7 +22,7 @@ public class Switch: UISwitch {
         makeUI()
     }
     
-    public func makeUI() {
+    open func makeUI() {
         self.addTarget(self, action: #selector(switchToggled(_:)), for: .valueChanged)
     }
     

@@ -32,7 +32,7 @@ open class Button: UIButton {
         makeUI()
     }
     
-    public func makeUI() {
+    open func makeUI() {
         
         layer.masksToBounds = false
         self.clipsToBounds = true
@@ -66,7 +66,7 @@ open class Button: UIButton {
         tapAction?(self)
     }
     
-    public func updateUI() {
+    open func updateUI() {
         setNeedsDisplay()
     }
     

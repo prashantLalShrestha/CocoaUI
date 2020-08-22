@@ -8,6 +8,6 @@
 
 import UIKit
 
-public class BarButtonItem: UIBarButtonItem {
+open class BarButtonItem: UIBarButtonItem {
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ImageView: UIImageView {
+open class ImageView: UIImageView {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,14 +30,14 @@ public class ImageView: UIImageView {
         makeUI()
     }
     
-    public func makeUI() {
+    open func makeUI() {
         layer.masksToBounds = true
         contentMode = .center
         
         updateUI()
     }
     
-    public func updateUI() {
+    open func updateUI() {
         setNeedsDisplay()
     }
 }

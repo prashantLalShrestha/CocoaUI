@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TableView: UITableView {
+open class TableView: UITableView {
     
     public init () {
         super.init(frame: CGRect(), style: .grouped)
@@ -24,7 +24,7 @@ public class TableView: UITableView {
         makeUI()
     }
     
-    public func makeUI() {
+    open func makeUI() {
         rowHeight = UITableView.automaticDimension
         estimatedRowHeight = 50
         sectionHeaderHeight = 40

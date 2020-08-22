@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CollectionView: UICollectionView {
+open class CollectionView: UICollectionView {
 
     public init() {
         super.init(frame: CGRect(), collectionViewLayout: UICollectionViewFlowLayout())
@@ -25,13 +25,13 @@ public class CollectionView: UICollectionView {
         makeUI()
     }
 
-    public func makeUI() {
+    open func makeUI() {
         self.layer.masksToBounds = true
         self.backgroundColor = .clear
         updateUI()
     }
 
-    public func updateUI() {
+    open func updateUI() {
         setNeedsDisplay()
     }
 

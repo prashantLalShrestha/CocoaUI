@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Toolbar: UIToolbar {
+open class Toolbar: UIToolbar {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,7 +20,7 @@ public class Toolbar: UIToolbar {
         makeUI()
     }
     
-    public func makeUI() {
+    open func makeUI() {
         isTranslucent = false
     }
 }

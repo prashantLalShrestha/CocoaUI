@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class PickerView: UIPickerView {
+open class PickerView: UIPickerView {
 
     public init() {
         super.init(frame: CGRect())
@@ -24,6 +24,6 @@ public class PickerView: UIPickerView {
         makeUI()
     }
 
-    public func makeUI() {
+    open func makeUI() {
     }
 }

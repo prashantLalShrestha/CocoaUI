@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class SearchBar: UISearchBar {
+open class SearchBar: UISearchBar {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,7 +20,7 @@ public class SearchBar: UISearchBar {
         makeUI()
     }
     
-    public func makeUI() {
+    open func makeUI() {
         
         placeholder = "Search"
         isTranslucent = false
@@ -28,7 +28,7 @@ public class SearchBar: UISearchBar {
         updateUI()
     }
     
-    public func updateUI() {
+    open func updateUI() {
         setNeedsDisplay()
     }
 }
