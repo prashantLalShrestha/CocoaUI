@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIImage {
+public extension UIImage {
     
     static func closeImage() -> UIImage {
         return UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512)).image { _ in
