@@ -89,7 +89,7 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
     
     public var closeBarButtonIcon: UIImage?
     public var backBarButtonIcon: UIImage?
-    private lazy var closeBarButton: BarButtonItem = {
+    public lazy var closeBarButton: BarButtonItem = {
         let view = BarButtonItem(image: UIImage.closeImage().scaled(to: CGSize(width: 16, height: 16))?.withRenderingMode(.alwaysTemplate),
                                  style: .plain,
                                  target: self,
