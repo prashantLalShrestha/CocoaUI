@@ -48,7 +48,7 @@ open class ErrorTableViewCell: TableViewCell {
         view.numberOfLines = 0
         return view
     }()
-    private lazy var contentStackView: StackView = {
+    public lazy var contentStackView: StackView = {
         let subViews = [titleLabel, descriptionLabel]
         let view = StackView(arrangedSubviews: subViews)
         view.axis = .vertical
