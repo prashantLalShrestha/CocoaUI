@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class ErrorTableViewCell: TableViewCell {
+open class ErrorTableViewCell: TableViewCell {
     
     
-    lazy var errorImageView: ImageView = {
+    public lazy var errorImageView: ImageView = {
         let view = ImageView()
         view.contentMode = .scaleAspectFit
         view.clipsToBounds = true
         return view
     }()
-    lazy var imageContainerView: View = {
+    public lazy var imageContainerView: View = {
         let view = View()
         view.addSubview(errorImageView)
         errorImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -32,7 +32,7 @@ public class ErrorTableViewCell: TableViewCell {
         return view
     }()
     
-    lazy var titleLabel: Label = {
+    public lazy var titleLabel: Label = {
         let view = Label()
         view.text = "---------"
         view.font = UIFont.mediumLargeBold
@@ -40,7 +40,7 @@ public class ErrorTableViewCell: TableViewCell {
         view.numberOfLines = 0
         return view
     }()
-    lazy var descriptionLabel: Label = {
+    public lazy var descriptionLabel: Label = {
         let view = Label()
         view.text = "---------"
         view.font = UIFont.smallLight
@@ -48,7 +48,7 @@ public class ErrorTableViewCell: TableViewCell {
         view.numberOfLines = 0
         return view
     }()
-    lazy var contentStackView: StackView = {
+    private lazy var contentStackView: StackView = {
         let subViews = [titleLabel, descriptionLabel]
         let view = StackView(arrangedSubviews: subViews)
         view.axis = .vertical
@@ -58,7 +58,7 @@ public class ErrorTableViewCell: TableViewCell {
         return view
     }()
     
-    lazy var button: Button = {
+    public lazy var button: Button = {
         let view = Button()
         view.layer.borderWidth = 1.0
         view.titleLabel?.font = UIFont.smallLight
@@ -68,7 +68,7 @@ public class ErrorTableViewCell: TableViewCell {
         return view
     }()
     
-    override public func makeUI() {
+    override open func makeUI() {
         super.makeUI()
         
         containerView.addSubview(imageContainerView)
@@ -92,11 +92,11 @@ public class ErrorTableViewCell: TableViewCell {
         button.heightAnchor.constraint(equalToConstant: BaseDimensions.buttonHeight * 0.9).isActive = true
     }
     
-    override public func languageChanged() {
+    override open func languageChanged() {
         super.languageChanged()
     }
     
-    public override func applyTheme(_ theme: Theme) {
+    open override func applyTheme(_ theme: Theme) {
         super.applyTheme(theme)
         self.contentView.backgroundColor = theme.backgroundDark
         
@@ -110,7 +110,7 @@ public class ErrorTableViewCell: TableViewCell {
         button.layer.borderColor = theme.textDark.cgColor
     }
     
-    public func bind(image: UIImage?, title: String?, description: String?, buttonTitle: String? = nil, buttonTapAction: (() -> ())? = nil) {
+    open func bind(image: UIImage?, title: String?, description: String?, buttonTitle: String? = nil, buttonTapAction: (() -> ())? = nil) {
         errorImageView.image = image
         
         titleLabel.text = title
