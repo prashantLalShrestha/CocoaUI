@@ -158,13 +158,13 @@ public struct BaseDimensions {
     public static var cornerRadius: CGFloat {
         switch UIDevice.deviceSize {
         case .screen4Inches:
-            return 8
+            return 12
         case .screen4Dot7Inches, .screen5Dot5Inches:
-            return 8
+            return 12
         case .screen5Dot8Inches, .screen6Dot1Inches, .screen6Dot5Inches:
-            return 8
+            return 12
         default:
-            return 8
+            return 12
         }
     }
     public static var cornerRadiusSmall: CGFloat {
