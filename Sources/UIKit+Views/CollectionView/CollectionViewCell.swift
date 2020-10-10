@@ -12,7 +12,7 @@ open class CollectionViewCell: UICollectionViewCell, ThemeConfigurable {
     public lazy var containerView: View = {
         let view = View()
         view.backgroundColor = .clear
-        self.addSubview(view)
+        self.contentView.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true

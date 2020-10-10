@@ -20,7 +20,7 @@ open class TableViewCell: UITableViewCell, ThemeConfigurable, Localizable {
     
     public lazy var containerView: View = {
         let view = View()
-        self.addSubview(view)
+        self.contentView.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
