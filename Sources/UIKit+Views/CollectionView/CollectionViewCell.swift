@@ -14,10 +14,10 @@ open class CollectionViewCell: UICollectionViewCell, ThemeConfigurable {
         view.backgroundColor = .clear
         self.contentView.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        view.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        view.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        view.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
+        view.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
+        view.leftAnchor.constraint(equalTo: self.contentView.leftAnchor).isActive = true
+        view.rightAnchor.constraint(equalTo: self.contentView.rightAnchor).isActive = true
         return view
     }()
     
