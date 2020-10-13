@@ -48,9 +48,10 @@ open class TableViewCell: UITableViewCell, ThemeConfigurable, Localizable {
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        languageChanged()
         self.registerForThemeEvent()
         makeUI()
+        languageChanged()
+        themeChanged()
     }
     
     required public init?(coder aDecoder: NSCoder) {
