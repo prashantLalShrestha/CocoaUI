@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "CocoaUI"
-  spec.version = "1.8.1"
+  spec.version = "1.8.2"
   spec.summary = "CocoaUI is just a simple UIKit utility Module"
 
   spec.description = <<-DESC
