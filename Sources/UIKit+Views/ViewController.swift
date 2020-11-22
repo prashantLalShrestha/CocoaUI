@@ -126,6 +126,9 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
         // Observe application did become active notification
         NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         
+        // Observe application will resign active notification
+        NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIApplication.willResignActiveNotification, object: nil)
+        
         // Observe application did change language notification
         self.registerForLocalizeEvent()
         
@@ -153,6 +156,7 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
         
@@ -192,6 +196,10 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
     
     @objc open func didBecomeActive() {
         self.updateUI()
+    }
+    
+    @objc open func willResignActive() {
+        
     }
     
     open func disableView(_ bool: Bool) {

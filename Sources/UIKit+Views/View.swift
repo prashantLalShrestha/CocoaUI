@@ -12,18 +12,12 @@ open class View: UIView {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        localInit()
         makeUI()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        localInit()
         makeUI()
-    }
-    
-    public func localInit() {
-        
     }
     
     open func makeUI() {
