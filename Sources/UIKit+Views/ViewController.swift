@@ -123,11 +123,17 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
         // Observe device orientation change
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
         
+        // Observe application will enter foreground notification
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         // Observe application did become active notification
         NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         // Observe application will resign active notification
         NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        // Observe application did enter background notification
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
         // Observe application did change language notification
         self.registerForLocalizeEvent()
@@ -155,8 +161,10 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
         
@@ -172,21 +180,13 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
         updateUI()
     }
     
-    open func bindViewModel() {
-        
-    }
+    open func bindViewModel() { }
     
-    open func updateUI() {
-        
-    }
+    open func updateUI() { }
     
-    open func languageChanged() {
-        
-    }
+    open func languageChanged() { }
     
-    open func applyTheme(_ theme: Theme) {
-        
-    }
+    open func applyTheme(_ theme: Theme) { }
     
     @objc open func orientationChanged() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
@@ -194,13 +194,15 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
         }
     }
     
+    @objc open func willEnterForeground() { }
+    
     @objc open func didBecomeActive() {
         self.updateUI()
     }
     
-    @objc open func willResignActive() {
-        
-    }
+    @objc open func willResignActive() { }
+    
+    @objc open func didEnterBackground() { }
     
     open func disableView(_ bool: Bool) {
         if bool {
