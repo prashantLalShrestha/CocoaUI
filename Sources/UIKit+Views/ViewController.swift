@@ -159,7 +159,17 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
         self.navigationController?.view.endEditing(true)
     }
     
+    open override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        removeObservers()
+    }
+    
     deinit {
+        removeObservers()
+    }
+    
+    private func removeObservers() {
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
@@ -169,7 +179,6 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
         
         NotificationCenter.default.removeObserver(self, name: .themeToggled, object: nil)
-        
     }
     
     override open func didReceiveMemoryWarning() {

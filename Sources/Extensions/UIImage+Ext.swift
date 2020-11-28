@@ -158,7 +158,7 @@ public extension UIImage {
     }
     
     func toString() -> String {
-        return self.pngData()!.base64EncodedString(options: .lineLength64Characters)
+        return self.jpegData(compressionQuality: 1.0)!.base64EncodedString(options: [])
     }
     
     
