@@ -9,7 +9,7 @@
 import UIKit
 import ObjectiveC
 
-public protocol ThemeConfigurable{
+public protocol ThemeConfigurable: class {
     func applyTheme(_ theme: Theme)
 }
 
@@ -39,7 +39,7 @@ public protocol ThemeConfigurable{
 
 public extension ThemeConfigurable {
     func registerForThemeEvent() {
-        NotificationCenter.default.addObserver(forName: .themeToggled, object: nil, queue: nil) {  (notification) in
+        NotificationCenter.default.addObserver(forName: .themeToggled, object: nil, queue: nil) { [unowned self] (notification) in
             self.themeChanged()
         }
     }

@@ -16,11 +16,11 @@ public extension UIFont {
             case .screen4Inches:
                 return 28
             case .screen4Dot7Inches, .screen5Dot5Inches:
-                return 35
+                return 34
             case .screen5Dot8Inches, .screen6Dot1Inches, .screen6Dot5Inches:
-                return 40
+                return 38
             default:
-                return 40
+                return 38
             }
         }
         public static var  large: CGFloat {
@@ -28,11 +28,11 @@ public extension UIFont {
             case .screen4Inches:
                 return 22
             case .screen4Dot7Inches, .screen5Dot5Inches:
-                return 24
+                return 23
             case .screen5Dot8Inches, .screen6Dot1Inches, .screen6Dot5Inches:
-                return 26
+                return 24
             default:
-                return 26
+                return 24
             }
         }
         public static var mediumLarge: CGFloat {
@@ -40,11 +40,11 @@ public extension UIFont {
             case .screen4Inches:
                 return 17
             case .screen4Dot7Inches, .screen5Dot5Inches:
-                return 19
+                return 18
             case .screen5Dot8Inches, .screen6Dot1Inches, .screen6Dot5Inches:
-                return 20
+                return 19
             default:
-                return 20
+                return 19
             }
         }
         public static var  regular: CGFloat {
