@@ -39,7 +39,7 @@ public protocol ThemeConfigurable: class {
 
 public extension ThemeConfigurable {
     func registerForThemeEvent() {
-        NotificationCenter.default.addObserver(forName: .themeToggled, object: nil, queue: nil) { [unowned self] (notification) in
+        NotificationCenter.default.addObserver(forName: .themeToggled, object: self, queue: nil) { [unowned self] (notification) in
             self.themeChanged()
         }
     }

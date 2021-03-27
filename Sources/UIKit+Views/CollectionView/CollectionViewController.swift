@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CollectionViewController: ViewController {
+open class CollectionViewController: ViewController {
 
     public lazy var collectionView: CollectionView = {
         let view = CollectionView()
@@ -17,11 +17,7 @@ public class CollectionViewController: ViewController {
 
     public var clearsSelectionOnViewWillAppear = true
 
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override public func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         if clearsSelectionOnViewWillAppear == true {
@@ -29,23 +25,11 @@ public class CollectionViewController: ViewController {
         }
     }
 
-    override public func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-
-    override public func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-
-    override public func makeUI() {
+    override open func makeUI() {
         super.makeUI()
 
         stackView.spacing = 0
         stackView.insertArrangedSubview(collectionView, at: 0)
-    }
-
-    override public func updateUI() {
-        super.updateUI()
     }
 }
 

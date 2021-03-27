@@ -159,12 +159,6 @@ open class ViewController: UIViewController, ThemeConfigurable, Localizable {
         self.navigationController?.view.endEditing(true)
     }
     
-    open override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        removeObservers()
-    }
-    
     deinit {
         removeObservers()
     }

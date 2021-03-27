@@ -18,10 +18,6 @@ open class TableViewController: ViewController, UIScrollViewDelegate {
     
     public var clearsSelectionOnViewWillAppear = true
     
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -38,10 +34,6 @@ open class TableViewController: ViewController, UIScrollViewDelegate {
         
 //        tableView.footRefreshControl.autoRefreshOnFoot = true
         
-    }
-    
-    override open func updateUI() {
-        super.updateUI()
     }
 }
 

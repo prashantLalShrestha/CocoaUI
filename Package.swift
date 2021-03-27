@@ -12,7 +12,7 @@ let package = Package(
             targets: ["CocoaUI"]),
     ],
     dependencies: [
-         .package(url: "https://github.com/prashantLalShrestha/LocalizeX.git", from: "1.0.0"),
+         .package(url: "https://github.com/prashantLalShrestha/LocalizeX.git", from: "1.4.0"),
          .package(url: "https://github.com/prashantLalShrestha/DeviceX.git", from: "1.0.0"),
     ],
     targets: [
